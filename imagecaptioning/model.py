@@ -374,9 +374,10 @@ class ImageCaptioning:
             decoded_caption += " " + sampled_token
 
         decoded_caption = decoded_caption.replace("<start> ", "")
-        decoded_caption = decoded_caption.replace(
-            "[UNK]", self.r.get_random_word(includePartOfSpeech="noun")
-        )
+        if "[UNK]" in decoded_caption:
+            decoded_caption = decoded_caption.replace(
+                "[UNK]", self.r.get_random_word(includePartOfSpeech="noun")
+            )
         decoded_caption = decoded_caption.replace(" <end>", "").strip()
 
         return decoded_caption
