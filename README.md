@@ -5,6 +5,12 @@
   <a href="https://github.com/reshalfahsi/image-captioning-api/actions/workflows/deploy.yml"><img src="https://github.com/reshalfahsi/image-captioning-api/actions/workflows/deploy.yml/badge.svg" alt="deployment testing"></a>
 </div>
 
+<div align="center">
+
+<img src="https://reshalfahsi.github.io/public/image-captioning.gif" width="400">
+
+</div>
+
 Minimal implementation of image captioning API hosted on [Heroku](https://image-captioning-69420.herokuapp.com/).
 
 ## API Reference
