@@ -47,7 +47,11 @@ def text_standardization(input_string):
 
 def preprocessing(image):
     image = tf.keras.preprocessing.image.img_to_array(image)
+    print(image)
     image = tf.image.resize(image, IMAGE_SIZE)
+    print(image)
     image = tf.image.convert_image_dtype(image, tf.float32)
+    print(image)
     image = tf.expand_dims(image, 0)
+    print(image)
     return image
