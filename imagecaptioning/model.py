@@ -353,7 +353,7 @@ class ImageCaptioning:
     def predict(self, file):
         image = Image.open(file.file)
         image = preprocessing(image)
-
+        image = self.model.cnn_model(image)
         encoded_img = self.model.encoder(image, training=False)
         decoded_caption = "<start> "
 
