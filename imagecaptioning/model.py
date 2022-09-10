@@ -348,6 +348,10 @@ class ImageCaptioning:
             vocabulary=vocab_data,
         )
 
+        vocab = self.vectorization.get_vocabulary()
+        self.index_lookup = dict(zip(range(len(vocab)), vocab))
+        self.max_decoded_sentence_length = SEQ_LENGTH - 1
+
         self.r = RandomWords()
 
     def predict(self, file):
@@ -357,14 +361,14 @@ class ImageCaptioning:
         encoded_img = self.model.encoder(image, training=False)
         decoded_caption = "<start> "
 
-        for i in range(max_decoded_sentence_length):
+        for i in range(self.max_decoded_sentence_length):
             tokenized_caption = self.vectorization([decoded_caption])[:, :-1]
             mask = tf.math.not_equal(tokenized_caption, 0)
             predictions = self.model.decoder(
                 tokenized_caption, encoded_img, training=False, mask=mask
             )
             sampled_token_index = np.argmax(predictions[0, i, :])
-            sampled_token = index_lookup[sampled_token_index]
+            sampled_token = self.index_lookup[sampled_token_index]
             if "<end>" in sampled_token:
                 break
             decoded_caption += " " + sampled_token
