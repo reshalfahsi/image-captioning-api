@@ -20,7 +20,6 @@ from tensorflow.keras.applications import efficientnet
 from tensorflow.keras.layers import TextVectorization
 
 import io
-import cv2
 import numpy as np
 import urllib.request
 
