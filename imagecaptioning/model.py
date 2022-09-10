@@ -381,4 +381,4 @@ class ImageCaptioning:
             )
         decoded_caption = decoded_caption.replace(" <end>", "").strip()
 
-        return decoded_caption
+        return decoded_caption + "."
