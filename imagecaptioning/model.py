@@ -371,6 +371,7 @@ class ImageCaptioning:
             sampled_token = self.index_lookup[sampled_token_index]
             if "<end>" in sampled_token:
                 break
+            if i == 0: sampled_token = sampled_token.title()
             decoded_caption += " " + sampled_token
 
         decoded_caption = decoded_caption.replace("<start> ", "")

@@ -16,3 +16,7 @@ Request: Image file
 
 Response: string
 
+## Announcement
+
+This API will die on November 28, 2022.
+
