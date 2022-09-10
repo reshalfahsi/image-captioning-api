@@ -1,6 +1,6 @@
 # from: https://github.com/yohanym95/dotnet-docker-heroku/blob/main/.github/workflows/main.yml
 
-name: docker-heroku CD
+name: deploy
 
 on:
   push:
