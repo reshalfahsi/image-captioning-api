@@ -330,7 +330,7 @@ class ImageCaptioning:
             loss=keras.losses.SparseCategoricalCrossentropy(),
         )
         test_input = np.random.random((1, IMAGE_SIZE[0], IMAGE_SIZE[1], 3))
-        test_target = np.random.random((1, VOCAB_SIZE, 25)).astype(np.int64)
+        test_target = np.random.random((1, 5, 25)).astype(np.int64)
         self.model.fit(test_input, test_target)
 
         self.model.built = True

@@ -29,5 +29,5 @@ Response: string
 
 ## Announcement
 
-This API will die on November 28, 2022.
+This API will be dead by November 28, 2022.
 
